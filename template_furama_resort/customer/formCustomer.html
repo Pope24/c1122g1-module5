@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service</title>
+    <link rel="stylesheet" href="../common//header.css" />
+    <link rel="stylesheet" href="../common/footer.css" />
+    <link rel="stylesheet" href="./formCustomer.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="service">
+      <div class="header">
+        <div class="container d-flex justify-content-between h-100">
+          <div class="left d-flex h-100">
+            <div class="logo h-100">
+              <img
+                class="h-100"
+                src="https://furama-booking.com/wp-content/uploads/2021/10/logo-furama-resort-villa.png"
+                alt=""
+              />
+            </div>
+            <div class="menu d-flex align-items-center">
+              <ul class="d-flex text-uppercase">
+                <li>
+                  <a href="">Trang chủ</a>
+                </li>
+                <li>
+                  <a href="">Phòng resort</a>
+                </li>
+                <li>
+                  <a href="">Phòng villa</a>
+                </li>
+                <li>
+                  <a href="">Tiện ích</a>
+                </li>
+                <li>
+                  <a href="">Tin tức</a>
+                </li>
+                <li>
+                  <a href="">Liên hệ furama</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="right d-flex justify-content-between align-items-center">
+            <div class="search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="phone-number">
+              <i class="fa-solid fa-phone"></i>
+              <span>+84934541444</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content mt-5 mb-5">
+        <section class="vh-100 gradient-custom">
+          <div class="container py-5 h-100">
+            <div class="row justify-content-center align-items-center h-100">
+              <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card card-registration" style="border-radius: 15px">
+                  <div class="card-body p-4 p-md-5">
+                    <h3 class="title mb-4 pb-2 pb-md-0 mb-md-5">
+                      Create new customer
+                    </h3>
+                    <form>
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input
+                              type="text"
+                              id="firstName"
+                              required
+                              class="form-control form-control-lg"
+                            />
+                            <label class="form-label" for="firstName"
+                              >Full name</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input
+                              type="number"
+                              id="lastName"
+                              required
+                              class="form-control form-control-lg"
+                            />
+                            <label class="form-label" for="lastName"
+                              >ID number</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-4 d-flex align-items-center">
+                          <div class="form-outline datepicker w-100">
+                            <input
+                              type="date"
+                              class="form-control form-control-lg"
+                              id="birthdayDate"
+                              required
+                            />
+                            <label for="birthdayDate" class="form-label"
+                              >Birthday</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <h6 class="mb-2 pb-1">Gender:</h6>
+
+                          <div class="form-check form-check-inline">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="inlineRadioOptions"
+                              id="femaleGender"
+                              value="option1"
+                              checked
+                            />
+                            <label class="form-check-label" for="femaleGender"
+                              >Female</label
+                            >
+                          </div>
+
+                          <div class="form-check form-check-inline">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="inlineRadioOptions"
+                              id="maleGender"
+                              value="option2"
+                            />
+                            <label class="form-check-label" for="maleGender"
+                              >Male</label
+                            >
+                          </div>
+
+                          <div class="form-check form-check-inline">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="inlineRadioOptions"
+                              id="otherGender"
+                              value="option3"
+                            />
+                            <label class="form-check-label" for="otherGender"
+                              >Other</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <input
+                              type="email"
+                              id="emailAddress"
+                              required
+                              class="form-control form-control-lg"
+                            />
+                            <label class="form-label" for="emailAddress"
+                              >Email</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <input
+                              type="tel"
+                              id="phoneNumber"
+                              required
+                              class="form-control form-control-lg"
+                            />
+                            <label class="form-label" for="phoneNumber"
+                              >Phone Number</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 mb-4 pb-2">
+                          <div class="form-outline">
+                            <input
+                              type="text"
+                              id="address"
+                              required
+                              class="form-control form-control-lg"
+                            />
+                            <label class="form-label" for="address"
+                              >Address</label
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4 pb-2">
+                          <select class="select form-control-lg">
+                            <option value="1" disabled>Choose option</option>
+                            <option value="2">Diamond</option>
+                            <option value="3">Platinum</option>
+                            <option value="4">Gold</option>
+                            <option value="5">Silver</option>
+                            <option value="6">Member</option>
+                          </select>
+                          <label class="form-label select-label"
+                            >Choose option</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="mt-4 pt-2 d-flex">
+                        <input
+                          class="submit-form btn btn-primary btn-lg flex-grow-1"
+                          type="submit"
+                          value="Submit"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Site footer -->
+      <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Links  -->
+        <section class="" style="background-color: #003680; height: auto">
+          <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+              <!-- Grid column -->
+              <div
+                class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4"
+                style="background-color: #f3f3f3; width: 320px"
+              >
+                <!-- Content -->
+                <h6
+                  class="text-uppercase fw-bold mb-4"
+                  style="
+                    margin-top: 50px;
+                    color: #cbbe73;
+                    font-size: 25px;
+                    text-align: center;
+                  "
+                >
+                  <i class="fas fa-gem me-3"></i>Hướng dẫn di chuyển
+                </h6>
+                <p style="font-size: 13px">
+                  Khu nghỉ dưỡng Furama là cơ sở hàng đầu để khám phá một trong
+                  những điểm đến hấp dẫn nhất Châu Á. Chỉ cách Đà Nẵng một quãng
+                  lái xe ngắn là bốn Di sản Văn hóa Thế giới được UNESCO công
+                  nhận
+                </p>
+                <button
+                  style="
+                    margin: auto;
+                    display: block;
+                    background-color: #003680;
+                    font-size: 16px;
+                    padding: 5px;
+                    border: none;
+                    color: white;
+                    height: 40px;
+                  "
+                >
+                  Xem trên bản đồ
+                </button>
+                <p style="color: #cbbe73; margin-top: 15px">Địa điểm</p>
+                <table class="table" style="font-size: 13px">
+                  <tr>
+                    <td>1.Cố đô Huế</td>
+                    <td>2 tiếng</td>
+                  </tr>
+                  <tr>
+                    <td>2.Phố cổ Hội An</td>
+                    <td>30 phút</td>
+                  </tr>
+                  <tr>
+                    <td>3.Thánh địa Mỹ Sơn</td>
+                    <td>90 phút</td>
+                  </tr>
+                  <tr>
+                    <td>4.Động Phong Nha</td>
+                    <td>3 tiếng</td>
+                  </tr>
+                </table>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <ul
+                  class="menu-footer color-fff"
+                  style="margin-top: 50px; margin-left: 5%"
+                >
+                  <li>Giá công bố</li>
+                  <li>LifeStyle blog</li>
+                  <li>Tuyển dụng</li>
+                  <li>Liên hệ</li>
+                </ul>
+                <img
+                  width="300%"
+                  style="margin-top: 170px; margin-left: -70px"
+                  src="https://furamavietnam.com/wp-content/uploads/2023/03/Ariyana-Tourism-Complex-02-500x131.png"
+                />
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div
+                class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 color-fff"
+                style="margin-top: 50px"
+              >
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4" style="color: #cbbe73">
+                  Liên hệ
+                </h6>
+                <p style="font-size: 12px">
+                  <i class="fas fa-home me-3"></i>103 - 105 Vo Nguyen Giap
+                  Street, Khue My Ward, Ngu Hanh Son District, Danang City,
+                  Vietnam Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666
+                  Email: reservation@furamavietnam.com * www.furamavietnam.com
+                  GDS Codes: Amadeus-GD DADFUR, Galileo/Apollo-GD 16236,
+                  Sabre-GD 032771, Worldspan- GD DADFU
+                </p>
+                <hr />
+                <i
+                  class="fa-brands fa-facebook"
+                  style="width: 32px; height: 32px; float: left"
+                  class="color-fff"
+                ></i>
+                <i
+                  class="fa-brands fa-instagram"
+                  style="width: 32px; height: 32px; float: left"
+                  class="color-fff"
+                ></i>
+                <i
+                  class="fa-brands fa-youtube"
+                  style="width: 32px; height: 32px; float: left"
+                  class="color-fff"
+                ></i>
+              </div>
+
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+          </div>
+        </section>
+        <!-- Section: Links  -->
+      </footer>
+    </div>
+  </body>
+</html>

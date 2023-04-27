@@ -1,0 +1,23 @@
+.card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+.card-registration .select-arrow {
+  top: 13px;
+}
+h3.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+input.submit-form {
+  background-color: #003680;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 24px;
+}
