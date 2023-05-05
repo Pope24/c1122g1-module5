@@ -1,15 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Form from "./components/Ss5_ApiClient/manageBook/form/form";
+import ManageBook from "./components/Ss5_ApiClient/manageBook/manageBook";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <App />
+      <Routes>
+        <Route path="/add-book" element={<Form />} />
+        <Route path="/edit-book/:id" element={<Form />} />
+        <Route index element={<ManageBook />} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
