@@ -14,7 +14,6 @@ function Form() {
       axios
         .post("http://localhost:3000/book", book)
         .then((data) => {
-          console.log("Da vao");
           alert("Thêm mới thành công !!");
         })
         .catch((error) => console.log(error));

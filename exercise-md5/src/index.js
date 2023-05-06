@@ -8,18 +8,20 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Form from "./components/Ss5_ApiClient/manageBook/form/form";
 import ManageBook from "./components/Ss5_ApiClient/manageBook/manageBook";
+import "react-toastify/dist/ReactToastify.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Router>
+    <App />
+    {/* <Router>
       <App />
       <Routes>
         <Route path="/add-book" element={<Form />} />
         <Route path="/edit-book/:id" element={<Form />} />
         <Route index element={<ManageBook />} />
       </Routes>
-    </Router>
+    </Router> */}
   </React.StrictMode>
 );
 

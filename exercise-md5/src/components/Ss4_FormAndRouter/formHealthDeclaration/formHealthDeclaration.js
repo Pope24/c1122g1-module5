@@ -1,184 +1,154 @@
-import { useState } from "react";
 import "./formHealthDeclaration.css";
-import { Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import { ColorRing } from "react-loader-spinner";
+import { ToastContainer, toast } from "react-toastify";
+import * as Yup from "yup";
 function FormHealthDeclaration() {
-  const [form, setForm] = useState({});
-  const [gender, setGender] = useState("male");
   const REGEX = {
     year: /^(19|20)\d{2}$/,
+    phoneNumber: /(84|0[3|5|7|8|9])+([0-9]{8})\b/,
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
   };
-  const handleChangeValueForm = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-  const handleValidate = () => {
-    const errors = {};
-    if (!form.name) {
-      errors.name = "Required enter !!!";
-    }
-    if (!form.passport) {
-      errors.passport = "Required enter !!!";
-    }
-    if (!form.yearOfBirth) {
-      errors.yearOfBirth = "Required enter !!!";
-    } else if (!REGEX.year.test(form.yearOfBirth)) {
-      errors.yearOfBirth = "Yêu cầu năm sinh lớn hơn 1900 !!!";
-    }
-    if (!form.nationality) {
-      errors.nationality = "Required enter !!!";
-    }
-    if (!form.city) {
-      errors.city = "Required enter !!!";
-    }
-    if (!form.district) {
-      errors.district = "Required enter !!!";
-    }
-    if (!form.town) {
-      errors.town = "Required enter !!!";
-    }
-    if (!form.apartmentNumber) {
-      errors.apartmentNumber = "Required enter !!!";
-    }
-    if (!form.phoneNumber) {
-      errors.phoneNumber = "Required enter !!!";
-    }
-    if (!form.email) {
-      errors.email = "Required enter !!!";
-    } else if (!REGEX.email.test(form.email)) {
-      errors.email = "Invalid email address";
-    }
-    return errors;
-  };
-  const handleSubmit = () => {
-    alert("Health declaration successfully !!");
-  };
+
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <ToastContainer />
       <Formik
-        initialValues={form}
-        validate={handleValidate}
-        onSubmit={handleSubmit}
+        initialValues={{
+          name: "",
+          passport: "",
+          yearOfBirth: "",
+          gender: "female",
+          nationality: "",
+          company: "",
+          department: "",
+          cardInsurance: "",
+          city: "",
+          district: "",
+          town: "",
+          apartmentNumber: "",
+          phoneNumber: "",
+          email: "",
+        }}
+        validationSchema={Yup.object({
+          name: Yup.string().required("Ten bat buoc nhap..."),
+          passport: Yup.string().required("CMND bat buoc nhap..."),
+          yearOfBirth: Yup.string()
+            .required("Ngay sinh bat buoc nhap...")
+            .matches(REGEX.year, "Ngay sinh phai tren 1900..."),
+          phoneNumber: Yup.string()
+            .required("So dien thoai bat buoc nhap...")
+            .matches(REGEX.phoneNumber, "So dien thoai phai 10 chu so (84|0+)"),
+          email: Yup.string()
+            .required("Email bat buoc nhap...")
+            .matches(REGEX.email, "Email nhap khong dung dinh dang..."),
+          nationality: Yup.string().required("Quoc tich bat buoc nhap..."),
+          city: Yup.string().required("Thanh pho bat buoc nhap..."),
+          district: Yup.string().required("Quan huyen bat buoc nhap..."),
+          town: Yup.string().required("Xa phuong bat buoc nhap..."),
+        })}
+        onSubmit={(values, { setSubmitting }) => {
+          setTimeout(() => {
+            setSubmitting(false);
+            toast("Thêm mới thành công !!", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+          }, 3000);
+        }}
       >
-        {({ errors, handleSubmit }) => {
-          return (
-            <form onSubmit={handleSubmit}>
+        {({ isSubmitting }) => (
+          <>
+            <Form>
               <label>Họ tên</label>
-              <input
-                type="text"
-                name="name"
-                value={form.name || ""}
-                onChange={handleChangeValueForm}
-              />
-              <p style={{ color: "red" }}>{errors.name}</p>
+              <Field type="text" name="name" />
+              <ErrorMessage name="name" className="error" component="p" />
               <label>Số hộ chiếu/CMND</label>
-              <input
-                type="text"
-                name="passport"
-                value={form.passport || ""}
-                onChange={handleChangeValueForm}
-              />
-              <p style={{ color: "red" }}>{errors.passport}</p>
+              <Field type="text" name="passport" />
+              <ErrorMessage name="passport" className="error" component="p" />
               <label>Năm sinh</label>
-              <input
-                type="text"
+              <Field type="text" name="yearOfBirth" />
+              <ErrorMessage
                 name="yearOfBirth"
-                value={form.yearOfBirth || ""}
-                onChange={handleChangeValueForm}
+                className="error"
+                component="p"
               />
-              <p style={{ color: "red" }}>{errors.yearOfBirth}</p>
-              <div
-                onChange={(e) => {
-                  setGender(e.target.value);
-                }}
-              >
+              <div>
                 <label>Giới tính</label>
-                <input type="radio" name="gender" defaultChecked value="male" />
+                <Field type="radio" name="gender" defaultChecked value="male" />
                 Male
-                <input type="radio" name="gender" value="female" />
+                <Field type="radio" name="gender" value="female" />
                 Female
               </div>
               <label>Quốc tịch</label>
-              <input
-                type="text"
+              <Field type="text" name="nationality" />
+              <ErrorMessage
                 name="nationality"
-                value={form.nationality || ""}
-                onChange={handleChangeValueForm}
+                className="error"
+                component="p"
               />
-              <p style={{ color: "red" }}>{errors.nationality}</p>
               <label>Công ty làm việc</label>
-              <input
-                type="text"
-                name="company"
-                value={form.company || ""}
-                onChange={handleChangeValueForm}
-              />
+              <Field type="text" name="company" />
               <label>Bộ phận làm việc</label>
-              <input
-                type="text"
-                name="department"
-                value={form.department || ""}
-                onChange={handleChangeValueForm}
-              />
+              <Field type="text" name="department" />
               <label>Có thẻ bảo hiểm y tế</label>
-              <input
-                type="text"
-                name="cardInsurance"
-                value={form.cardInsurance || ""}
-                onChange={handleChangeValueForm}
-              />
+              <Field type="text" name="cardInsurance" />
               <label>Tỉnh thành</label>
-              <input
-                type="text"
-                name="city"
-                value={form.city || ""}
-                onChange={handleChangeValueForm}
-              />
-              <p style={{ color: "red" }}>{errors.city}</p>
+              <Field type="text" name="city" />
+              <ErrorMessage name="city" className="error" component="p" />
               <label>Quận huyện</label>
-              <input
-                type="text"
-                name="district"
-                value={form.district || ""}
-                onChange={handleChangeValueForm}
-              />
-              <p style={{ color: "red" }}>{errors.district}</p>
+              <Field type="text" name="district" />
+              <ErrorMessage name="district" className="error" component="p" />
               <label>Phường xã</label>
-              <input
-                type="text"
-                name="town"
-                value={form.town || ""}
-                onChange={handleChangeValueForm}
-              />
-              <p style={{ color: "red" }}>{errors.town}</p>
+              <Field type="text" name="town" />
+              <ErrorMessage name="town" className="error" component="p" />
               <label>Số nhà, phố, tổ dân phố /thôn /đội</label>
-              <input
-                type="text"
-                name="apartmentNumber"
-                value={form.apartmentNumber || ""}
-                onChange={handleChangeValueForm}
-              />
-              <p style={{ color: "red" }}>{errors.apartmentNumber}</p>
+              <Field type="text" name="apartmentNumber" />
               <label>Điện thoại</label>
-              <input
-                type="text"
+              <Field type="text" name="phoneNumber" />
+              <ErrorMessage
                 name="phoneNumber"
-                value={form.phoneNumber || ""}
-                onChange={handleChangeValueForm}
+                component="p"
+                className="error"
               />
-              <p style={{ color: "red" }}>{errors.phoneNumber}</p>
               <label>Email</label>
-              <input
-                type="text"
-                name="email"
-                value={form.email || ""}
-                onChange={handleChangeValueForm}
-              />
-              <p style={{ color: "red" }}>{errors.email}</p>
+              <Field type="text" name="email" />
+              <ErrorMessage name="email" component="p" className="error" />
               <label className="mt-3"></label>
-              <button type="submit">Submit form</button>
-            </form>
-          );
-        }}
+              {isSubmitting ? (
+                <ColorRing
+                  visible={true}
+                  height="80"
+                  width="80"
+                  ariaLabel="blocks-loading"
+                  wrapperStyle={{}}
+                  wrapperClass="blocks-wrapper"
+                  colors={["#000"]}
+                />
+              ) : (
+                <button type="submit">Submit form</button>
+              )}
+            </Form>
+          </>
+        )}
       </Formik>
     </>
   );
