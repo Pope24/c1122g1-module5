@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
-import Form from "./form/form";
-import "./manageBook.css";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
-import { replace } from "formik";
+import "./manageBook.css";
 function ManageBook() {
   const [books, setBooks] = useState([]);
-  const [isDelete, setIsDelete] = useState(false);
   const [bookDelete, setBookDelete] = useState({});
-  const navigate = useNavigate();
+  const [isDelete, setIsDelete] = useState(false);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const handleDeleteBook = (id) => {
     axios
       .delete("http://localhost:3000/book/" + id)
       .then((data) => setIsDelete(!isDelete))
       .catch((error) => console.log(error));
-    navigate("/");
   };
   useEffect(() => {
     axios.get("http://localhost:3000/book").then((data) => setBooks(data.data));
@@ -52,10 +53,8 @@ function ManageBook() {
                 <td>
                   <button
                     className="btn btn-danger"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
                     onClick={() => {
-                      console.log(1);
+                      handleShow();
                       setBookDelete({
                         id: book.id,
                         title: book.title,
@@ -71,48 +70,28 @@ function ManageBook() {
           })}
         </tbody>
       </table>
-      <div
-        className="modal fade"
-        id="exampleModal"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Xác nhận
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">Xác nhận xóa {bookDelete.title} ?</div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Đóng
-              </button>
-              <button
-                type="button"
-                className="btn btn-danger"
-                onClick={() => {
-                  handleDeleteBook(bookDelete.id);
-                }}
-              >
-                Xóa
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      {bookDelete.id && (
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Xác nhận</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Bạn chắc chắn xóa {bookDelete.title} ?</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Đóng
+            </Button>
+            <Button
+              variant="danger"
+              onClick={() => {
+                handleClose();
+                handleDeleteBook(bookDelete.id);
+              }}
+            >
+              Xóa
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </>
   );
 }
