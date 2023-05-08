@@ -9,19 +9,18 @@ import reportWebVitals from "./reportWebVitals";
 import Form from "./components/Ss5_ApiClient/manageBook/form/form";
 import ManageBook from "./components/Ss5_ApiClient/manageBook/manageBook";
 import "react-toastify/dist/ReactToastify.css";
+import Ss6Redux from "./components/Ss6_Redux/Ss6_Redux";
+import { Provider } from "react-redux";
+import store from "./components/redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
-    {/* <Router>
-      <App />
-      <Routes>
-        <Route path="/add-book" element={<Form />} />
-        <Route path="/edit-book/:id" element={<Form />} />
-        <Route index element={<ManageBook />} />
-      </Routes>
-    </Router> */}
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>
 );
 

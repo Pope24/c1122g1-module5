@@ -6,6 +6,10 @@ import Ss3 from "./components/Ss3/ss3";
 import Ss4 from "./components/Ss4_FormAndRouter/ss4FormAndRouter";
 import Ss5ApiClient from "./components/Ss5_ApiClient/ss5ApiClient";
 import ManageBook from "./components/Ss5_ApiClient/manageBook/manageBook";
+import Ss6Redux from "./components/Ss6_Redux/Ss6_Redux";
+import { Route, Routes } from "react-router-dom";
+import ImplemetationReduxThunk from "./components/Ss6_Redux/ImplementationReduxThunk/ImplemetationReduxThunk";
+import ListUser from "./components/Ss6_Redux/ImplementationReduxThunk/ListUser";
 
 function App() {
   return (
@@ -13,8 +17,13 @@ function App() {
       {/* <Ss1 /> */}
       {/* <Ss2 /> */}
       {/* <Ss3 /> */}
-      <Ss4 />
+      {/* <Ss4 /> */}
       {/* <Ss5ApiClient /> */}
+      <Ss6Redux />
+      {/* <Routes>
+        <Route path="*" Component={ImplemetationReduxThunk} />
+        <Route path="//user" Component={ListUser} />
+      </Routes> */}
     </div>
   );
 }
