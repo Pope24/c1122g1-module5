@@ -10,6 +10,7 @@ import Ss6Redux from "./components/Ss6_Redux/Ss6_Redux";
 import { Route, Routes } from "react-router-dom";
 import ImplemetationReduxThunk from "./components/Ss6_Redux/ImplementationReduxThunk/ImplemetationReduxThunk";
 import ListUser from "./components/Ss6_Redux/ImplementationReduxThunk/ListUser";
+import Fibonacci from "./components/typescript/fibonaci";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       {/* <Ss3 /> */}
       {/* <Ss4 /> */}
       {/* <Ss5ApiClient /> */}
-      <Ss6Redux />
+      {/* <Ss6Redux /> */}
+      <Fibonacci num={10} />
       {/* <Routes>
         <Route path="*" Component={ImplemetationReduxThunk} />
         <Route path="//user" Component={ListUser} />
