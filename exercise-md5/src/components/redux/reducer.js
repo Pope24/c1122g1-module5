@@ -8,14 +8,16 @@ const initialState = {
 };
 // Khởi tạo reducer
 const rootReducer = (state = initialState, action) => {
+  console.log(action);
   // Handle các actions gửi lên
   switch (action.type) {
     case LOGIN_SUCCESS:
       return { ...state, userLogined: action.payload };
     case FETCH_USER_SUCCESS:
-      return { ...state, users: JSON.parse(JSON.stringify(action.payload)) };
+      return { ...state, users: [...action.payload] };
     default:
       return state;
   }
 };
+console.log(initialState);
 export default rootReducer;

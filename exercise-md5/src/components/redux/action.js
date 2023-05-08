@@ -13,7 +13,6 @@ export const fakeLogin = (payload) => {
         payload: payload,
       });
       dispatch(getUser());
-      console.log(getUser());
     } else alert("Login failed !!!");
   };
 };

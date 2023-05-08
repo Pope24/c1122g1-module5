@@ -19,13 +19,13 @@ function App() {
       {/* <Ss2 /> */}
       {/* <Ss3 /> */}
       {/* <Ss4 /> */}
-      <Ss5ApiClient />
+      {/* <Ss5ApiClient /> */}
       {/* <Ss6Redux /> */}
       {/* <Fibonacci num={10} /> */}
-      {/* <Routes>
+      <Routes>
         <Route path="*" Component={ImplemetationReduxThunk} />
         <Route path="//user" Component={ListUser} />
-      </Routes> */}
+      </Routes>
     </div>
   );
 }

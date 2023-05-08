@@ -9,7 +9,7 @@ function Ss6Redux() {
       {/* <ImplementationReduxSaga /> */}
       {/* <ImplemetationReduxThunk /> */}
       {/* <TodoListRedux /> */}
-      <ManageUser />
+      {/* <ManageUser /> */}
     </>
   );
 }
