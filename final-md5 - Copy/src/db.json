@@ -1,0 +1,57 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Quần T-shirt Vàng",
+      "publicDay": "2023-05-04",
+      "amount": 2,
+      "typeProduct": 2
+    },
+    {
+      "id": 2,
+      "name": "Áo Jacket Tím",
+      "publicDay": "2023-04-05",
+      "amount": 11,
+      "typeProduct": 3
+    },
+    {
+      "id": 3,
+      "name": "Áo T-shirt Trắng",
+      "publicDay": "2023-04-26",
+      "amount": 12,
+      "typeProduct": 1
+    },
+    {
+      "id": 4,
+      "name": "Mũ lông chó",
+      "publicDay": "2023-05-11",
+      "amount": 5,
+      "typeProduct": 4
+    },
+    {
+      "id": 5,
+      "name": "Quần bò jean Trắng",
+      "publicDay": "2023-05-12",
+      "amount": 3,
+      "typeProduct": 4
+    }
+  ],
+  "typeProduct": [
+    {
+      "id": 1,
+      "name": "T-Shirt"
+    },
+    {
+      "id": 2,
+      "name": "Quần jean"
+    },
+    {
+      "id": 3,
+      "name": "Áo Jacket"
+    },
+    {
+      "id": 4,
+      "name": "Phụ kiện"
+    }
+  ]
+}
