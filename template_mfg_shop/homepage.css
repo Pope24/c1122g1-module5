@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: monospace, sans-serif !important;
+}
+.w-15 {
+  width: 15%;
+}
+.w-85 {
+  width: 85%;
+}
+html,
+body {
+  height: 100%;
+  line-height: 1.5;
+}
+a {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* HEADER */
+.header {
+  height: 95px;
+}
+.name-company {
+  font-size: 26px;
+  font-weight: 900;
+  margin: 0;
+}
+.navbar {
+  height: 90px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+}
+.menu-navbar {
+  font-size: 20px;
+  font-weight: 700;
+}
+/* CONTENT */
+.main {
+  min-height: 700px;
+  display: flex;
+}
+.main .sidebar {
+  z-index: -1;
+}
+.main .sidebar .menu-sidebar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  list-style: none;
+  background-color: #f47916;
+  height: 100%;
+  position: sticky;
+  top: 114px;
+  height: 100vh;
+}
+.menu-sidebar li {
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: 700;
+}
+/* FOOTER */
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.footer-top .title-footer {
+  font-size: 24px;
+  font-weight: bold;
+}
+.text-footer {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 16px;
+}

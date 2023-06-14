@@ -4,8 +4,7 @@
   font-family: monospace, sans-serif !important;
 }
 html,
-body,
-.content {
+body {
   height: 100%;
   line-height: 1.5;
 }
@@ -13,6 +12,30 @@ a {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+/* HEADER */
+.header {
+  height: 95px;
+}
+.name-company {
+  font-size: 26px;
+  font-weight: 900;
+  margin: 0;
+}
+.navbar {
+  height: 90px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+}
+.menu-navbar {
+  font-size: 20px;
+  font-weight: 700;
+}
+/* CONTENT */
+.content {
+  min-height: 600px;
+  margin-bottom: 50px;
 }
 .login {
   width: 560px;
@@ -70,4 +93,23 @@ a {
   color: #959898;
   font-weight: 500;
   display: inline-block;
+}
+/* FOOTER */
+.footer-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.footer-top .title-footer {
+  font-size: 24px;
+  font-weight: bold;
+}
+.text-footer {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 16px;
 }
